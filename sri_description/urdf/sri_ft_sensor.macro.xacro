@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:macro name="sri_ft_sensor" params="
+        parent
+        *origin
+        sensor_name
+    ">
+
+        <!-- Set tf_prefix based on sensor_name -->
+        <xacro:if value="${sensor_name != ''}">
+            <xacro:property name="tf_prefix" value="${sensor_name}_"/>
+        </xacro:if>
+        <xacro:unless value="${sensor_name != ''}">
+            <xacro:property name="tf_prefix" value=""/>
+        </xacro:unless>
+
+        <!-- single link to represent the sensor -->
+        <link name="${tf_prefix}sri_fts_link"/>
+        <joint name="sensor_mount_joint" type="fixed">
+            <xacro:insert_block name="origin" />
+            <parent link="${parent}" />
+            <child link="${tf_prefix}sri_fts_link" />
+        </joint>
+
+  </xacro:macro>
+</robot>

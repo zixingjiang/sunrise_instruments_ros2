@@ -1,0 +1,11 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+  
+    sri_fts_broadcaster:
+      type: force_torque_sensor_broadcaster/ForceTorqueSensorBroadcaster
+ 
+sri_fts_broadcaster:
+  ros__parameters:
+    sensor_name: $(var tf_prefix)sri_ft_sensor
+    frame_id: $(var tf_prefix)sri_fts_link 

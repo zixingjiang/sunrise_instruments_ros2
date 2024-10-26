@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="sri_ft_sensor_setup" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find sri_description)/urdf/sri_ft_sensor.macro.xacro"/>
+    <xacro:include filename="$(find sri_description)/urdf/sri_ft_sensor.ros2_control.xacro"/>   
+
+    <xacro:arg name="sensor_name" default=""/>
+    <xacro:arg name="sensor_ip" default="0.0.0.0"/>
+    <xacro:arg name="sensor_port" default="4008"/>
+
+    <!-- attach sri ft sensor to world -->
+    <link name="world"/>
+    <xacro:sri_ft_sensor
+        parent="world"
+        sensor_name="$(arg sensor_name)"
+    >
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
+    </xacro:sri_ft_sensor>
+
+    <!-- include ros2_control tag for sri ft sensor -->
+    <xacro:sri_ft_sensor_ros2_control
+        sensor_name="$(arg sensor_name)"
+        sensor_ip="$(arg sensor_ip)"
+        sensor_port="$(arg sensor_port)"
+    />
+
+</robot>

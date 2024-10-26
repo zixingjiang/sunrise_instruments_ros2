@@ -1,0 +1,9 @@
+<library path="sri_hardware">
+  <class name="sri_hardware/SRIForceTorqueSensorHardwareInterface"
+         type="sri_hardware::SRIForceTorqueSensorHardwareInterface"
+         base_class_type="hardware_interface::SensorInterface">
+    <description>
+      ros2_control hardware interface for Sunrise Instruments 6 axis force/torque load cells.
+    </description>
+  </class>
+</library>
