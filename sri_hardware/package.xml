@@ -13,7 +13,7 @@
   <depend>pluginlib</depend>
   <depend>rclcpp</depend>
   <depend>rclcpp_lifecycle</depend>
-  <dependent>boost</dependent>
+  <depend>boost</depend>
 
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>xacro</exec_depend>
