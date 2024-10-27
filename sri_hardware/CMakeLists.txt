@@ -16,6 +16,7 @@ find_package(hardware_interface REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(Boost REQUIRED system)
 
 ## Setup target
 add_library(
@@ -33,7 +34,6 @@ set(DEPENDENCIES
   pluginlib
   rclcpp
   rclcpp_lifecycle
-  Boost::system
 )
 
 ament_target_dependencies(${PROJECT_NAME} ${DEPENDENCIES})
