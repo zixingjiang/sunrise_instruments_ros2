@@ -1,0 +1,26 @@
+name: CI (jazzy)
+on:
+  push:
+    branches: [ jazzy ]
+  pull_request:
+    branches: [ jazzy ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 5'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:noble
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: jazzy
+      - name: Print ls and pwd
+        run: |
+          ls
+          pwd
+      - uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          target-ros2-distro: jazzy
