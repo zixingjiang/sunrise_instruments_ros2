@@ -1,6 +1,9 @@
 # Sunrise Instruments ROS2
 This repository includes a `ros2_control` driver for [Sunrise Instruments (SRI)](https://www.srisensor.com/) 6 axis force/torque sensors.
 
+[![Licence](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+![Build Status](https://github.com/zixingjiang/sunrise_instruments_ros2/actions/workflows/ci_jazzy.yml/badge.svg)
+
 ## System Requirements
 ROS2 Jazzy on Ubuntu 24.04 LTS. 
 
