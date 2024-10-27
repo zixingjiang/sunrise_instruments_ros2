@@ -33,6 +33,7 @@ set(DEPENDENCIES
   pluginlib
   rclcpp
   rclcpp_lifecycle
+  Boost::system
 )
 
 ament_target_dependencies(${PROJECT_NAME} ${DEPENDENCIES})
