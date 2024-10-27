@@ -1,4 +1,4 @@
-name: CI (jazzy)
+name: Jazzy Binary Build
 on:
   push:
     branches: [ jazzy ]
@@ -17,10 +17,6 @@ jobs:
       - uses: ros-tooling/setup-ros@v0.7
         with:
           required-ros-distributions: jazzy
-      - name: Print ls and pwd
-        run: |
-          ls
-          pwd
       - uses: ros-tooling/action-ros-ci@v0.3
         with:
           target-ros2-distro: jazzy
